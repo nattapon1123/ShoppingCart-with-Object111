@@ -141,12 +141,10 @@ namespace ShoppingCart
             pizza.Quantity = float.TryParse(PizzaQuantity.Text, out float pizzaQty) ? pizzaQty : 0;
             pizza.IsSelected = Pizza.Checked;
 
-            // คำนวณยอดรวมและส่วนลด
             float total = CalculateTotal();
             float discount = CalculateDiscount(total);
             total -= discount;
 
-            // แสดงยอดรวมและส่วนลด
             Total.Text = total.ToString("F2");
             CalculateChange(total);
     
